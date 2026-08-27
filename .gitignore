@@ -1,0 +1,6 @@
+node_modules/
+dist/
+release*/
+.halo-chat-data/
+*.log
+.DS_Store

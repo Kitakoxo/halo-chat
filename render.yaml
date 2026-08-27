@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: halo-chat
+    runtime: node
+    plan: free
+    buildCommand: ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HALO_CHAT_ACCESS_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+
